@@ -1,0 +1,29 @@
+<header>
+  <nav>
+    <div class="logo-area">
+      {% if business.branding.logo %}
+        <img src="{{ business.branding.logo }}" alt="{{ business.meta.businessName }}">
+        {% elif business.meta.businessName %}
+          <span class="logo-text">{{ business.meta.businessName }}</span>
+        {% else %}
+          <span class="logo-text">{{ business.meta.firstName }}
+            {{ business.meta.lastName }}</span>
+        {% endif %}
+      </div>
+      <div class="cta-area">
+        {% set contact = business.meta.primaryContact %}
+        {% if "@" in contact %}
+          {% set url = "mailto:" + contact %}
+        {% elif contact %}
+          {# This chain handles spaces, dashes, dots, and parentheses #}
+          {% set cleanedPhone = contact | replace(" ", "") | replace("-", "") | replace(".", "") | replace("(", "") | replace(")", "") %}
+          {% set url = "tel:" + cleanedPhone %}
+        {% else %}
+          {% set url = "#contact" %}
+        {% endif %}
+        <a href="{{ url }}" class="btn-primary">
+          {{ business.header.ctaText }}
+        </a>
+      </div>
+    </nav>
+  </header>

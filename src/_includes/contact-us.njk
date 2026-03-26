@@ -1,0 +1,20 @@
+<section id="contact-us">
+  <div class="contact-us-container">
+    <div class="contact-us-content">
+      <h2>{{ business.contactUs.headline | default("Big Project or Small Fix, We’re Ready to Help", true) }}</h2>
+    </div>
+    {% set contact = business.meta.primaryContact %}
+    {% if "@" in contact %}
+      {% set url = "mailto:" + contact %}
+    {% elif contact %}
+      {# This chain handles spaces, dashes, dots, and parentheses #}
+      {% set cleanedPhone = contact | replace(" ", "") | replace("-", "") | replace(".", "") | replace("(", "") | replace(")", "") %}
+      {% set url = "tel:" + cleanedPhone %}
+    {% else %}
+      {% set url = "#contact" %}
+    {% endif %}
+    <a href="{{ url }}" class="btn-secondary">
+      {{ business.header.ctaText }}
+    </a>
+  </div>
+</section>

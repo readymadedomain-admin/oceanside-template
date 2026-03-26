@@ -1,0 +1,24 @@
+{% set wcu = business.whyChooseUs %}
+{% if wcu.yearsExperience and wcu.yearsBusiness and wcu.satisfiedCustomers and wcu.yearsServingCommunity %}
+<section id="why-choose-us">
+  <h2>Why Choose Us</h2>
+  <div class="stats-grid">
+    <div class="stat-card">
+      <span class="stat-number">{{ wcu.yearsExperience }}</span>
+      <span class="stat-label">Years of Experience</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">{{ wcu.yearsBusiness }}</span>
+      <span class="stat-label">Years in Business</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">{{ wcu.satisfiedCustomers }}</span>
+      <span class="stat-label">Satisfied Customers</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">{{ wcu.yearsServingCommunity }}</span>
+      <span class="stat-label">Years Serving Community</span>
+    </div>
+  </div>
+</section>
+{% endif %}

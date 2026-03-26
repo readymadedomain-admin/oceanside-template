@@ -1,0 +1,14 @@
+{% if business.projects.length > 0 %}
+<section id="projects">
+  <h2>Past Projects</h2>
+  <div class="carousel">
+    {% for project in business.projects %}
+      {% if project.src %}
+        <div class="project-item">
+          <img src="{{ project.src }}" alt="{{ project.alt | default('Work project image') }}" loading="lazy">
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}

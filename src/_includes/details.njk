@@ -1,0 +1,95 @@
+<section id="business-details">
+    <h2>Our Details</h2>
+    <div class="details-grid">
+        <div class="detail-column">
+            <h3>Contact Information</h3>
+            <ul class="list-column">
+                <li>
+                    {% if business.meta.firstName %}
+                        <p>
+                            <span class="detail-label">Main Contact:</span>
+                            {{ (business.meta.firstName + " " + business.meta.lastName) }}
+                        </p>
+                    {% endif %}
+                </li>
+                <li>
+                    {% if business.details.phone %}
+                        <p>
+                            <span class="detail-label">Phone:</span>
+                            <a href="tel:{{ business.details.phone | replace(' ', '') | replace('(', '') | replace(')', '') | replace('-', '') }}">{{ business.details.phone }}</a>
+                        </p>
+                    {% endif %}
+                </li>
+                <li>
+                    {% if business.details.email %}
+                        <p>
+                            <span class="detail-label">Email:</span>
+                            <a href="mailto:{{ business.details.email }}">{{ business.details.email }}</a>
+                        </p>
+                    {% endif %}
+                </li>
+            </ul>
+        </div>
+        {% if business.details.serviceAreas.length > 0 %}
+            <div class="detail-column">
+                <h3>Areas We Service</h3>
+                <ul class="list-row">
+                    {% for area in business.details.serviceAreas %}
+                        <li>
+                            <p>{{ area }}</p>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        {% if business.details.serviceTypes.length > 0 %}
+            <div class="detail-column">
+                <h3>Services We Offer</h3>
+                <ul class="list-row">
+                    {% for types in business.details.serviceTypes %}
+                        <li>
+                            <p>{{ types }}</p>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        {% if business.details.paymentMethods.length > 0 %}
+            <div class="detail-column">
+                <h3>Payment Methods We Accept</h3>
+                <ul class="list-row">
+                    {% for method in business.details.paymentMethods %}
+                        <li>
+                            <p>{{ method }}</p>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        {% if business.details.hours %}
+            <div class="detail-column">
+                <h3>Business Hours</h3>
+                <ul class="list-column">
+                    <li>
+                        <p>
+                            <span class="detail-label">Mon-Fri:</span>
+                            {{ business.details.hours.monFri }}
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <span class="detail-label">Sat:</span>
+                            {{ business.details.hours.sat }}
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <span class="detail-label">Sun:</span>
+                            {{ business.details.hours.sun }}
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+</section>

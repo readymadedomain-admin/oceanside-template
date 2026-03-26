@@ -1,0 +1,40 @@
+<section
+  class="hero"
+  style="background-image: url('{{ business.hero.backgroundImage |
+    default('https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2070&auto=format&fit=crop') }}');">
+  <div class="hero-content">
+    {% if business.hero.tagline %}
+      <span class="tag">{{ business.hero.tagline }}</span>
+    {% endif %}
+    <h1>{{ business.hero.headline }}</h1>
+    <p>{{ business.hero.body }}</p>
+    <div class="hero-ctas">
+      {% if business.hero.ctaPrimary %}
+        {% set contact = business.meta.primaryContact %}
+        {% if "@" in contact %}
+          {% set url = "mailto:" + contact %}
+        {% elif contact %}
+          {# This chain handles spaces, dashes, dots, and parentheses #}
+          {% set cleanedPhone = contact | replace(" ", "") | replace("-", "") | replace(".", "") | replace("(", "") | replace(")", "") %}
+          {% set url = "tel:" + cleanedPhone %}
+        {% else %}
+          {% set url = "#contact" %}
+        {% endif %}
+        <a href="{{ url }}" class="btn-primary">
+          {{ business.header.ctaText }}
+        </a>
+      {% endif %}
+      {% if business.hero.ctaSecondary %}
+        <div
+          class="cta-area">
+          {# We trim the email just in case there are stray spaces from the intake form #}
+          {% set email = business.details.email | trim %}
+          {% set url = "mailto:" + email %}
+          <a href="{{ url }}" class="btn-secondary">
+            {{ business.hero.ctaSecondaryText or "Email Us" }}
+          </a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

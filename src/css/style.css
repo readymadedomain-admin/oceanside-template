@@ -152,8 +152,8 @@
   --color-neutral-80: #F1F0F0;
   --color-neutral-100: #EDECEC;
 
-  /* Surfaces */
-  --color-bg: #14120B;
+  /* Surfaces (#14120B) */
+  --color-bg: blue;
   --color-surface-card: #1B1812;
   --color-surface-secondary: #222018;
   --color-surface-elevated: #2A261D;

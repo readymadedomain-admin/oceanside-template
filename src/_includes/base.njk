@@ -1,11 +1,60 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="{{ theme.colorway }}">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{{ business.meta.businessName }} | {{ business.meta.city }}</title>
-        <link rel="stylesheet" href="./css/style.css">
-    </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary SEO -->
+  <title>{{ business.meta.title }}</title>
+  <meta name="description" content="{{ business.meta.description }}">
+  <meta name="keywords" content="{{ business.meta.keywords }}">
+  <link rel="canonical" href="{{ business.meta.domain }}">
+
+  <!-- Local SEO (helps Google understand geography) -->
+  <meta name="geo.region" content="US-{{ business.meta.state }}">
+  <meta name="geo.placename" content="{{ business.meta.city }}">
+  <meta name="geo.position" content="">
+  <meta name="ICBM" content="">
+
+  <!-- Open Graph (Facebook, iMessage, Slack, etc.) -->
+  <meta property="og:title" content="{{ business.meta.title }}">
+  <meta property="og:description" content="{{ business.meta.description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ business.meta.domain }}">
+  <meta property="og:image" content="{{ business.meta.domain }}{{ business.meta.ogImage }}">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ business.meta.title }}">
+  <meta name="twitter:description" content="{{ business.meta.description }}">
+  <meta name="twitter:image" content="{{ business.meta.domain }}{{ business.meta.ogImage }}">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- Schema.org Local Business (VERY important for local SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "{{ business.meta.businessName }}",
+    "telephone": "{{ business.meta.primaryContact }}",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "{{ business.meta.city }}",
+      "addressRegion": "{{ business.meta.state }}",
+      "addressCountry": "US"
+    },
+    "url": "{{ business.meta.domain }}"
+  }
+  </script>
+</head>
     <body id="top">
         {% include "header.njk" %}
         <main>

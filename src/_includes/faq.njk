@@ -1,0 +1,26 @@
+{% if business.services.length > 0 %}
+  <section id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+      {% for faq in business.faq %}
+        {% if faq.label and faq.body %}
+          <div class="faq-accordion">
+            <div class="faq-header">
+              <h3>{{ faq.label }}</h3>
+              <svg viewBox="0 0 16 16" fill="none" class="icon-chevron" aria-hidden="true">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M8 0C12.4183 0 16 3.58172 16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0ZM8.00098
+                    9.60547L4.25098 5.85547L3.45508 6.65137L7.4707 10.666C7.76361 10.9588 8.23842 10.9589 8.53125 10.666L12.5459
+                    6.65137L11.751 5.85547L8.00098 9.60547Z"
+                  fill="currentColor"></path>
+              </svg>
+            </div>
+            <p>{{ faq.body }}</p>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}

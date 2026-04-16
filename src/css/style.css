@@ -132,7 +132,7 @@
   --color-border-strong: rgba(38, 37, 30, 0.20);
 
   /* Contrast Overlays */
-  --color-contrast-default:#f7f7f47e;
+  --color-contrast-default: #f7f7f47e;
 
   /* Text Mappings */
   --color-text-main: var(--color-neutral-100);
@@ -163,8 +163,8 @@
   --color-border-subtle: rgba(237, 236, 236, 0.12);
   --color-border-strong: rgba(237, 236, 236, 0.26);
 
-    /* Contrast Overlays */
-    --color-contrast-default:#14120B7e;
+  /* Contrast Overlays */
+  --color-contrast-default: #14120B7e;
 
   /* Text Mappings */
   --color-text-main: var(--color-neutral-100);
@@ -174,22 +174,34 @@
 /* "Sahara" Theme (Desert Inspired - AAA Compliant) */
 [data-theme="sahara-light"] {
   /* Vibrant Accents */
-  --color-success: #1B4332; /* Deep Cactus Green */
-  --color-error: #921D1D;   /* Red Jasper */
-  --color-focus: #0056D2;   /* Cobalt Sky */
-  --color-accent: #BC4B00;  /* Burnt Terracotta */
+  --color-success: #1B4332;
+  /* Deep Cactus Green */
+  --color-error: #921D1D;
+  /* Red Jasper */
+  --color-focus: #0056D2;
+  /* Cobalt Sky */
+  --color-accent: #BC4B00;
+  /* Burnt Terracotta */
 
   /* Neutrals */
-  --color-neutral-40: #A69F93; /* Warm Silt */
-  --color-neutral-60: #7A7267; /* Canyon Shadow */
-  --color-neutral-80: #4D473E; /* Toasted Umber */
-  --color-neutral-100: #2D2924; /* Obsidian Rock */
+  --color-neutral-40: #A69F93;
+  /* Warm Silt */
+  --color-neutral-60: #7A7267;
+  /* Canyon Shadow */
+  --color-neutral-80: #4D473E;
+  /* Toasted Umber */
+  --color-neutral-100: #2D2924;
+  /* Obsidian Rock */
 
   /* Surfaces */
-  --color-bg: #F9F6F0;               /* Bleached Sand */
-  --color-surface-card: #F2EBE0;      /* Dune Light */
-  --color-surface-secondary: #E8DCC8; /* Soft Ochre */
-  --color-surface-elevated: #DFD0B8;  /* Mesa Clay */
+  --color-bg: #F9F6F0;
+  /* Bleached Sand */
+  --color-surface-card: #F2EBE0;
+  /* Dune Light */
+  --color-surface-secondary: #E8DCC8;
+  /* Soft Ochre */
+  --color-surface-elevated: #DFD0B8;
+  /* Mesa Clay */
 
   /* Borders */
   --color-border-default: rgba(45, 41, 36, 0.08);
@@ -270,8 +282,8 @@ a {
 }
 
 .btn-primary:focus-visible {
-outline: 2px solid var(--color-focus);
-outline-offset: 2px;
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
 }
 
 /* Primary Button */
@@ -304,8 +316,8 @@ outline-offset: 2px;
 }
 
 .btn-secondary:focus-visible {
-outline: 2px solid var(--color-focus);
-outline-offset: 2px;
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
 }
 
 .tag {
@@ -325,19 +337,21 @@ outline-offset: 2px;
    HEADER SECTION
    ========================================================================== */
 
-   header {
-    /* Sticky Logic */
-    position: sticky;
-    top: 0;
-    z-index: 1000; /* Ensures the header stays above cards, carousels, and images */
-    background-color: var(--color-bg); /* Prevents content from showing through the header */
-  
-    /* Layout & Sizing */
-    max-width: 1440px;
-    min-width: 375px;
-    margin: 0 auto;
-    padding: var(--space-24) var(--space-16);
-  }
+header {
+  /* Sticky Logic */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  /* Ensures the header stays above cards, carousels, and images */
+  background-color: var(--color-bg);
+  /* Prevents content from showing through the header */
+
+  /* Layout & Sizing */
+  max-width: 1440px;
+  min-width: 375px;
+  margin: 0 auto;
+  padding: var(--space-24) var(--space-16);
+}
 
 header nav {
   display: flex;
@@ -421,8 +435,10 @@ main {
 .hero::before {
   content: "";
   position: absolute;
-  inset: 0; /* Covers the entire hero area */
-  background-color: var(--color-contrast-default); /* Your dark tint */
+  inset: 0;
+  /* Covers the entire hero area */
+  background-color: var(--color-contrast-default);
+  /* Your dark tint */
 }
 
 .hero-content {
@@ -920,61 +936,164 @@ main {
    CONTACT US SECTION
    ========================================================================== */
 
-   #contact-us {
-    display: flex;
-    flex-direction: column;
-    /* Mobile stack */
-    gap: var(--space-12);
-    padding: var(--space-16);
-    /* Mobile section padding */
-  }
-  
-  /* Main Content Container */
-  .contact-us-container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    /* Stacked for mobile */
-    justify-content: center;
-    align-items: center;
-    /* Centered on mobile */
-    gap: var(--space-24);
-    padding: var(--space-24);
-  }
-  
-  /* Text Content Wrapper */
-  .contact-us-content {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-16);
-  }
-  
-  #contact-us h2 {
-    color: var(--color-neutral-100);
-    font-family: var(--font-family-base);
-    font-size: var(--font-size-headline);
-    font-weight: var(--font-weight-medium);
-    line-height: var(--line-height-headline);
-    letter-spacing: var(--letter-spacing-headline);
-    text-align: center;
-  }
-  
-  #contact-us p {
-    margin: 0;
-    color: var(--color-neutral-100);
-    font-size: var(--font-size-copy);
-    font-weight: var(--font-weight-regular);
-    line-height: var(--line-height-copy);
-    letter-spacing: var(--letter-spacing-copy);
-    text-align: center;
-  }
-  
-  /* Button behavior */
-  #contact-us .btn-secondary {
-    /* Full width mobile */
-    text-align: center;
-    width: fit-content;
-  }
+#contact-us {
+  display: flex;
+  flex-direction: column;
+  /* Mobile stack */
+  gap: var(--space-12);
+  padding: var(--space-16);
+  /* Mobile section padding */
+}
+
+/* Main Content Container */
+.contact-us-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* Stacked for mobile */
+  justify-content: center;
+  align-items: center;
+  /* Centered on mobile */
+  gap: var(--space-24);
+  padding: var(--space-24);
+}
+
+/* Text Content Wrapper */
+.contact-us-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+#contact-us h2 {
+  color: var(--color-neutral-100);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-headline);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-headline);
+  letter-spacing: var(--letter-spacing-headline);
+  text-align: center;
+}
+
+#contact-us p {
+  margin: 0;
+  color: var(--color-neutral-100);
+  font-size: var(--font-size-copy);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-copy);
+  letter-spacing: var(--letter-spacing-copy);
+  text-align: center;
+}
+
+/* Button behavior */
+#contact-us .btn-secondary {
+  /* Full width mobile */
+  text-align: center;
+  width: fit-content;
+}
+
+/* ==========================================================================
+   FAQ SECTION
+   ========================================================================== */
+
+#faq {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(var(--space-20), 2.5vw, var(--space-24));
+  padding: 0 var(--space-16);
+}
+
+#faq h2 {
+  color: var(--color-neutral-100);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-lead);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-lead);
+  letter-spacing: var(--letter-spacing-label);
+}
+
+/* The Grid Container */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  width: 100%;
+}
+
+/* Service Card Style */
+.faq-accordion {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* FIX: Ensures all children (header and p tag) start at the left edge */
+  align-items: flex-start;
+  text-align: left;
+
+  gap: var(--space-12);
+  background-color: var(--color-surface-card);
+  border-radius: var(--space-12);
+  padding: var(--space-16);
+}
+
+/* Card Border via Pseudo-element */
+.faq-accordion::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--space-12);
+  border: 1px solid var(--color-border-default);
+  pointer-events: none;
+  /* Ensures the border doesn't block clicks */
+}
+
+/* Card Header (Icon + Title) */
+.faq-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-12);
+  width: 100%;
+  cursor: pointer;
+}
+
+.faq-header h3 {
+  margin: 0;
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-neutral-100);
+}
+
+.icon-chevron {
+  /* Size requirements */
+  width: 20px;
+  height: 20px;
+
+  /* Color: Since the SVG path uses 'currentColor', 
+         changing the 'color' property here updates the icon color */
+  /* color: var(--color-success); */
+
+  flex-shrink: 0;
+  display: block;
+  /* Removes any extra baseline spacing */
+}
+
+/* Card Description */
+.faq-accordion p {
+  margin: 0;
+  font-size: var(--font-size-copy);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-copy);
+  color: var(--color-text-muted);
+}
+
+/* Accordion Transition */
+.faq-accordion .icon-chevron {
+  transition: transform 0.2s ease-in;
+}
+
+.faq-accordion.is-open .icon-chevron {
+  transform: rotate(180deg);
+}
 
 /* ==========================================================================
    BUSINESS DETAILS SECTION
@@ -1268,7 +1387,7 @@ footer {
     width: calc(100% + (var(--space-24) * 2));
     margin-left: calc(var(--space-24) * -1);
     padding: 0 var(--space-24);
-    
+
   }
 
   .review-card {
@@ -1326,6 +1445,41 @@ footer {
     /* Hugs content on desktop */
     align-self: flex-start;
     /* Keeps button from stretching vertically */
+  }
+
+  /* ==========================================================================
+   FAQ SECTION - DESKTOP
+   ========================================================================== */
+
+  #faq {
+    flex-direction: row;
+    gap: var(--space-60);
+  }
+
+  #faq h2 {
+    flex-shrink: 0;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+    flex-shrink: 1;
+  }
+
+  .faq-accordion {
+    padding: var(--space-20);
+    /* Desktop padding */
+  }
+
+  .faq-header {
+    gap: var(--space-16);
+    /* Desktop gap */
+  }
+
+  .icon-chevron {
+    width: 24px;
+    height: 24px;
   }
 
   /* ==========================================================================

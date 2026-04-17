@@ -363,7 +363,7 @@ header nav {
 
 /* Logo Area */
 .logo-area img {
-  max-height: 80px;
+  max-height: 40px;
   width: auto;
   /* Maintains flexible width for any orientation */
   border-radius: var(--space-12);

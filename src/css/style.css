@@ -465,6 +465,7 @@ main {
   color: var(--color-neutral-100);
   font-size: var(--font-size-copy);
   text-align: center;
+  line-height: var(--line-height-copy);
 }
 
 /* CTAs */

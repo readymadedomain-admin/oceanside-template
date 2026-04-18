@@ -31,7 +31,7 @@
           {% set email = business.details.email | trim %}
           {% set url = "mailto:" + email %}
           <a href="{{ url }}" class="btn-secondary">
-            {{ business.hero.ctaSecondaryText or "Email Us" }}
+            {{ business.hero.ctaSecondary or "Email Us" }}
           </a>
         </div>
       {% endif %}
